@@ -1,6 +1,4 @@
-#include "GenStack.h"
 #include "Finder.h"
-#include "FileNotFoundException.h"
 
 int main(int argc, char **argv)
 {
@@ -16,7 +14,7 @@ int main(int argc, char **argv)
       cin >> choice;
     }
   }
-  //error catching 
+  //error catching
   catch(EmptyStackException e)
   {
     cout << e.what() << endl;

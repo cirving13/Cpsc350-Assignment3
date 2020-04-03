@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "EmptyStackException.h"
+
 using namespace std;
 
 template <class T>
@@ -46,7 +47,6 @@ GenStack<T>::GenStack(int maxSize)
 template <class T>
 GenStack<T>::~GenStack()
 {
-  cout << "deleted" << endl;
   delete myArray;
 }
 
@@ -69,7 +69,11 @@ void GenStack<T>::enlarge() //doubles the size of the stack to allow for longer 
     tempArray[i] = myArray[i];
   }
   delete myArray;
-  myArray = tempArray;
+  T*myArray = new T[2*size];
+  for(int i = 0; i < size; ++i) //moving everything back to the original stack
+  {
+    myArray[i] = tempArray[i];
+  }
   delete tempArray;
   size = size * 2;
 }

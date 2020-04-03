@@ -27,7 +27,7 @@ void Finder::syntaxCheck()
     }
     else if (c == '}' || c == ']' || c == ')') //checks if the delimiter at the top of the stack to see if it is the same as the closing delimiter
     {                                          //if not, then there is an error in the code
-      first = stack.topStack();
+      first = stack.topStack(); //gets the top of the stack to compare with the closing delimiter read
       if(stack.isEmpty())
       {
         cout << "Nothing in the stack" << endl;
@@ -60,17 +60,22 @@ void Finder::syntaxCheck()
   }
   else if(!stack.isEmpty()) //each situation of an end of file error
   {
+    cout << "yeet" << endl;
+    first = stack.topStack(); //needed to be redefined here because it wont read if there are 0 closing delimiters
+    cout << "shoot me" << endl;
+    cout << first << endl;
+    cout << "i want to die" << endl;
     if(first == '{')
     {
       cout << "end of file reached, expected }" << endl;
       exit(0);
     }
-    if(first == '(')
+    else if(first == '(')
     {
       cout << "end of file reached, expected )" << endl;
       exit(0);
     }
-    if(first == '[')
+    else if(first == '[')
     {
       cout << "end of file reached, expected ]" << endl;
       exit(0);

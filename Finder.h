@@ -2,6 +2,7 @@
 #include <fstream>
 #include "GenStack.h"
 #include "FileNotFoundException.h"
+
 using namespace std;
 
 class Finder
