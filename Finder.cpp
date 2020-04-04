@@ -63,11 +63,7 @@ void Finder::syntaxCheck()
   }
   else if(!stack.isEmpty()) //each situation of an end of file error
   {
-    cout << "yeet" << endl;
     first = stack.topStack(); //needed to be redefined here because it wont read if there are 0 closing delimiters
-    cout << "shoot me" << endl;
-    cout << first << endl;
-    cout << "i want to die" << endl;
     if(first == '{')
     {
       cout << "end of file reached, expected }" << endl;
