@@ -54,6 +54,7 @@ void Finder::syntaxCheck()
       stack.pop(); //removes the opening delimiter tested and continues on with the code
     }
   }
+  inFile.close();
   if(stack.isEmpty()) //finished the code all the way, will continue the loop
   {
     cout << "there are no errors in the code" << endl;
