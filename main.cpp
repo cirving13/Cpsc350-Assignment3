@@ -6,12 +6,26 @@ int main(int argc, char **argv)
   try
   {
     Finder find;
+    string name;
+    if(argv[1]!=NULL)
+    {
+      name = argv[1];
+      find.setFileName(name);
+      find.syntaxCheck();
+    }
     char choice = 'y';
     while(choice == 'y')
     {
-      find.syntaxCheck(); //completes everything
-      cout << "Do you want to check another file? (y or n) " << endl;
+      cout << "Do you want to check a file? (y or n) " << endl;
       cin >> choice;
+      if(choice != 'y') //breaks loop if user makes any choice other than yes
+      {
+        break;
+      }
+      cout << "what is the name of the file you want checked? " << endl;
+      cin >> name;
+      find.setFileName(name);
+      find.syntaxCheck(); //completes everything
     }
   }
   //error catching

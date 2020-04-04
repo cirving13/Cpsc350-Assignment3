@@ -10,6 +10,7 @@ class Finder
 public:
   //the only method
   void syntaxCheck();
+  void setFileName(string input);
   //some variable stuff
   string fileName;
   char first;

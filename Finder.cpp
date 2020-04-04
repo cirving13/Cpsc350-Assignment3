@@ -1,9 +1,11 @@
 #include "Finder.h"
 
+void Finder::setFileName(string input)
+{
+  fileName = input;
+}
 void Finder::syntaxCheck()
 {
-  cout << "what is the name of the file you want checked? " << endl;
-  cin >> fileName;
   GenStack<char> stack;
   ifstream inFile;
   inFile.open(fileName);
